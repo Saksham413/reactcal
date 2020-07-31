@@ -43,21 +43,24 @@ class App extends React.Component{
       Subject: 'John',
       StartTime: new Date(2020, 6, 7, 6, 0),
       EndTime: new Date(2020, 6, 7, 7, 0),
-      Description: 'sjhdjs'
+      Description: 'sjhdjs',
+      IsReadonly: true
     },
     {
       Id:2,
       Subject: 'Steve',
       StartTime: new Date(2020, 6, 8, 8, 0),
       EndTime: new Date(2020, 6, 8, 9, 0),
-      Description: 'shdgsh'
+      Description: 'shdgsh',
+      IsReadonly: true
     },
     {
       Id:3,
       Subject: 'Ramdev',
       StartTime: new Date(2020, 6, 7, 5, 0),
       EndTime: new Date(2020, 6, 7, 6, 0),
-      Description: 'sjhdjs'
+      Description: 'sjhdjs',
+      IsReadonly: true
     }
   ]
   private remoteData = new DataManager({
@@ -115,7 +118,8 @@ class App extends React.Component{
     return(
       <ScheduleComponent height = '550px'
       eventSettings={{dataSource: this.localData}}
-      views={['Day', 'Month', 'MonthAgenda', 'TimelineWeek']}
+      //views={['Day', 'Month', 'MonthAgenda', 'TimelineWeek']}
+      views={['MonthAgenda']}
       editorTemplate={this.editorWindowTemplate.bind(this)}>
       <Inject services={[Day, Month, MonthAgenda, TimelineMonth]}/>
     </ScheduleComponent>
